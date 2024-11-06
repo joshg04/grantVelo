@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0px;
+  padding: 0px;
+  color: rgb(65, 105, 225); 
+  font-family: Roboto;
+  }
+  
+  /* Optional: Style specific elements */
+  h1, h2, h3, p {
+    font-family: Roboto
+  }
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
