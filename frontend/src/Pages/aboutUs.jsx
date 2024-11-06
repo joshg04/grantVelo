@@ -11,19 +11,12 @@ export default function AboutUs() {
                 <div className="aboutUs-item-wrapper 1">
                     <div className="aboutUs-title-wrapper 1">
                         <h1>Welcome to Grant Velocity</h1>
-                        <p className="aboutUs-item 1">Your comprehensive platform for discovering grant opportunities tailored to your unique business needs</p>
-                        <p className="aboutUs-item">We empower businesses, non-profits, and individuals by connecting them with funding sources at the federal, state, local, and private levels, giving them the support they need to make their projects and visions a reality.</p>
-                    </div>
-                    {/* <img src={img1} /> */}
-                </div>
-                <div className="aboutUs-item-wrapper 2">
-                    {/* <img src={img2} /> */}
-                    <div className="aboutUs-title-wrapper 2">
-                        <h1>Securing grants can be a complex process</h1>
-                        <p className="aboutUs-item 2"> That’s why we’ve streamlined the search experience by offering curated, up-to-date listings and advanced filtering options. With just a few clicks, you can explore grants that align with your industry, location, funding requirements, business stage, and application deadlines.</p>
-                    </div>
+                        <p className="aboutUs-item 1">Your comprehensive platform for discovering grant opportunities tailored to your unique business needs
+                        We empower businesses, non-profits, and individuals by connecting them with funding sources at the federal, state, local, and private levels, giving them the support they need to make their projects and visions a reality.
+                        recuring grants can be a complex process that’s why we’ve streamlined the search experience by offering curated, up-to-date listings and advanced filtering options. With just a few clicks, you can explore grants that align with your industry, location, funding requirements, business stage, and application deadlines.</p>
 
-                </div>
+                    </div>
+                </div>                
                 <div className="aboutUs-item-wrapper 3">
                     <div className="aboutUs-title-wrapper 3">
                         <h1>Our Mission</h1>

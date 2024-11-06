@@ -25,9 +25,10 @@ body{
 .searchbar-wrapper{
   display: flex;
   flex-direction: column;
-  height: 9%;
+  height: 100%;
   width: 100%;
   z-index: 2;
+  align-items: center;
 }
 
 .searchbar-inside{
@@ -128,20 +129,19 @@ body{
   cursor: pointer;
 }
 
-
-
-/* Hero Desktop breakpoint */
 @media (max-width: 1920px){
   .home-parent-wrapper{
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    margin-top: 6rem;
   }
 
 .home-wrapper{
 display: flex;
-justify-content: space-evenly;
+justify-content: center;
 align-items: center;
 height: 100%;
+width: 100%;
 }
 
 #temp{
@@ -155,8 +155,12 @@ height: 100%;
   align-items: center;
   justify-content: center;
   height: 100%;
-  width:50%;
+  width:70%;
   text-align: center;
+}
+
+.home-searchbar-wrapper{
+  width: 100%;
 }
 
 .home-text-section h1, p{
@@ -174,17 +178,604 @@ height: 100%;
 
 .primary-body{
   max-width: 80%;
-  text-align: left;
+  text-align: center;
 }
 
 .primary-search-bar{
   margin-top: 1rem;
-  width: 80%;
+  width: 100%;
   height: 2rem;
   border-radius: 25px;
   padding: 5px;
   border: 2px solid rgb(65, 105, 225);
+}
 
+/* --- home-feature --- 1920px desktop */
+
+.feature-parent-wrapper{
+  height: 100%;
+  width: 100%;
+}
+
+.feature-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-wrapper h1{
+  margin-bottom: 10px;
+}
+
+.feature-item-wrapper{
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+  width: 80%;
+  gap: 5rem;
+}
+
+.feature-title{
+  font-size: 4rem;
+}
+
+.feature{
+  border: 1px solid black;
+  border-radius: 5%;
+  font-size: 1rem;
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  padding: 0px 1rem;
+}
+
+.feature a{
+  display: flex;
+  gap: 0.7rem;
+  margin: 1rem 0px;
+color:royalblue;
+}
+
+/* home discover  1920px Desktop */
+
+.home-discover-wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.discover-inner-wrapper{
+  width: 80%;
+  display: flex;
+  gap: 3rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.discover-text-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  font-size: 1.2rem;
+}
+
+.discover-item-wrapper{
+  display: flex;
+  height: 50%;
+  gap: 3em;
+  width: fit-content;
+}
+
+.discover-tempimg{
+  height: 500px;
+  width: 1000px;
+  background-color: gray;
+
+}
+
+.discover{
+  border: 1px solid black;
+  border-radius: 5%;
+  font-size: 1rem;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.discover-item1-learnMore{
+  background-color: royalblue;
+  padding: 2%;
+  color: white;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.discover-item1-cta{
+  display: flex;
+  gap: 1rem;
+}
+
+.discover a{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* cta 1920px desktop */
+
+.cta-wrapper{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cta-inner-wrapper{
+  width: 80%;
+  display: flex;
+}
+
+.cta-text-wrapper{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-login-wrapper{
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 1rem;
+}
+
+.cta-login-wrapper a{
+  display: flex;
+
+}
+
+.cta-login-wrapper-signup{
+  background-color: royalblue;
+  color: white;
+  border-radius: 5px;
+  padding: 4%;
+}
+
+.cta-tempimg{
+  height: 500px;
+  width: 500px;
+  background-color: grey;
+}
+
+/* ---newsletter--- 1920px desktop */
+
+.newsletter-wrapper{
+  display: flex;
+  width: 100%;
+  height: 20vh;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+
+.newsletter-text-body{
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter-input-wrapper{
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap:1rem;
+}
+
+.newsletter-input-wrapper input{
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 25vw;
+  height: 5vh;
+  padding: 1px 10px;
+}
+
+.newsletter-input-wrapper a{
+  background-color: royalblue;
+  border-radius: 5px;
+  padding: 7px;
+  color: white;
+}
+
+/* --- footer --- 1920px desktop*/
+.footer-wrapper{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(240,240,240);
+  color: black; 
+  width: 100%;  
+}
+
+.footer-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-head ul{
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.footer-link-item-wrapper{
+  display: flex;
+  list-style: none;
+  gap: 5rem;
+}
+
+.footer-logo-wrapper img{
+  height: 60px;
+  width: 300px;
+}
+
+/* About us desktop 1920px */
+
+.aboutUs-wrapper{
+  width: 100vw;
+  height: 100vh;
+  margin-top: 5rem;
+}
+
+.aboutUs-inner-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.aboutUs-item{
+  color: black;
+  font-size: 1.2rem;
+}
+
+.aboutUs-item-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30vh;
+}
+
+.aboutUs-item-wrapper img{
+  height: auto;
+  width: 40%
+}
+
+.aboutUs-card-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutUs-card-header{
+  text-align: center;
+  font-size: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.aboutUs-card-header h1{
+  font-size: 2rem;
+}
+
+.aboutUs-card{
+  display: flex;
+  gap: 2rem;
+  height: 20vh;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.aboutUs-card-item{
+  width: 100%;
+  height: 80%;
+  background-color: royalBlue;
+  color: white;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.aboutUs-card-item p{
+  color: inherit;
+}
+
+[class="aboutUs-item 7"]{
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.aboutUs-title-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 2rem;
+  padding: 0.7rem;
+}
+
+.aboutUs-title-wrapper h1{
+  font-size: 5rem;
+}
+
+
+
+ /* contact page 1920px Desktop */
+
+.contact-wrapper{
+  width: 100vw;
+  height: 90vh;
+  position: relative;
+  top: 4.3rem;
+}
+
+.contact-inner-wrapper{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-info-wrapper{
+  flex: 1;
+  background-color: royalblue;
+  color: white;
+}
+
+.contact-form-wrapper{
+  flex: 3;
+}
+
+.contact-form-inner-wrapper{
+  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form-background{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 0.5rem;
+  height: 85%;
+  width: 50%;
+  gap: 1.7rem;
+
+  background-color: royalblue;
+  color: white;
+}
+
+.contact-form-background input, textarea{
+  height: 2.5rem;
+  width: 80%;
+  padding: 0px 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact-form-background textarea{
+  padding-top: 0.5rem;
+  height: 6rem;
+}
+
+.contact-form-background button{
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact-info-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-header{
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.contact-info-item{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.contact-info-item h1{
+  font-size: 1.5rem;
+}
+
+/* Login/Signup 1920px DESKTOP */
+
+.login-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-background{
+  text-align: center;
+  background-color: #F0F0F0;
+  width: 20%;
+  height: 70%;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-logo img{
+  height:60px;
+  width: 300px;
+}
+
+.login-username{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: -1rem;
+}
+
+
+.login-pass{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: -1rem;
+}
+
+.login-checkbox{
+  display: flex;
+  margin-top: -1.5rem;
+}
+
+.login-wrapper button{
+  border: none;
+  background-color: royalblue;
+  color: white;
+  border-radius: 5px;
+  height: 2rem;
+  width: 100%;
+}
+
+.login-links{
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: left;
+}
+
+.login-input{
+  border: none;
+  border-radius: 5px;
+  height: 1.5rem;
+  margin-top: -0.6rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.login-background h1{
+  font-size: 1.5rem;
+}
+
+.signup-input-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: -1rem;
+}
+
+.login-email{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.login-confirmPass{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: -1rem;
+}
+/* max-width 1920px desktop end */
+
+}
+
+
+
+/* Hero Desktop breakpoint */
+@media (max-width: 1590px){
+  .home-parent-wrapper{
+    width: 100%;
+    height: 40vh;
+  }
+
+.home-wrapper{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+width: 100%;
+}
+
+
+.home-text-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width:70%;
+  text-align: center;
+}
+
+.home-searchbar-wrapper{
+  width: 100%;
+}
+
+.home-text-section h1, p{
+  margin: 0.5rem;
+}
+
+.home-homecard{
+  width: 40%;
+}
+
+.primary-heading{
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+.primary-body{
+  max-width: 80%;
+  text-align: center;
+}
+
+.primary-search-bar{
+  margin-top: 1rem;
+  width: 100%;
+  height: 2rem;
+  border-radius: 25px;
+  padding: 5px;
+  border: 2px solid rgb(65, 105, 225);
 }
 
 /* --- home-feature --- desktop */
@@ -240,7 +831,7 @@ color:royalblue;
 /* home discover Desktop */
 
 .home-discover-wrapper{
-  height: 100vh;
+  height: 50vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -258,6 +849,7 @@ color:royalblue;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
+  font-size: 1.2rem;
 }
 
 .discover-item-wrapper{
@@ -352,14 +944,15 @@ color:royalblue;
   background-color: grey;
 }
 
-/* ---newsletter--- */
+/* ---newsletter--- desktop */
 
 .newsletter-wrapper{
   display: flex;
   width: 100%;
-  height: 60vh;
+  height: 20vh;
   justify-content: space-evenly;
   align-items: center;
+  margin-bottom: 3rem;
 }
 
 .newsletter-text-body{
@@ -434,21 +1027,21 @@ color:royalblue;
 .aboutUs-inner-wrapper{
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 70%;
   align-items: center;
   margin: 0 auto;
 }
 
 .aboutUs-item{
-  color: rgb(150, 150, 150);
-  font-size: 1rem;
+  color: black;
+  font-size: 1.2rem;
 }
 
 .aboutUs-item-wrapper{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 90vh;
+  height: 50vh;
 }
 
 .aboutUs-item-wrapper img{
@@ -503,6 +1096,7 @@ color:royalblue;
 
 [class="aboutUs-item 7"]{
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .aboutUs-title-wrapper{
@@ -511,16 +1105,12 @@ color:royalblue;
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 1.5rem;
+  line-height: 2rem;
   padding: 0.7rem;
 }
 
-[class="aboutUs-title-wrapper 2"] h1{
-  line-height: 2.5rem;
-}
-
 .aboutUs-title-wrapper h1{
-  font-size: 3rem;
+  font-size: 5rem;
 }
 
 
@@ -945,7 +1535,7 @@ color:royalblue;
   .newsletter-text-body{
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
   }
   
   .newsletter-input-wrapper{
@@ -1287,8 +1877,10 @@ color:royalblue;
 
 .HomeCard-wrapper{
   /* display: flex; */
-  width: 100%;
-  height: 450px;
+  margin-bottom: 1rem;
+  margin-inline: auto;
+  width: 90%;
+  height: 28rem;
   position: relative;
   overflow: hidden;
   mask-image: linear-gradient(
@@ -1300,14 +1892,21 @@ color:royalblue;
   );
 }
 
+@keyframes scrollLeft{
+
+  to{
+    left: -18rem;
+  }
+}
+
 .item {
   border-radius: 25px;
   background-color: gray;
 
   position: absolute;
   height: 100%;
-  width: 18em;
-  left: max(calc(18em*8), 100%);
+  width: 18rem;
+  left: max(calc(18rem * 8), 100%);
   
   animation-name: scrollLeft;
   animation-duration: 30s;
@@ -1344,12 +1943,7 @@ color:royalblue;
   animation-delay: calc( 30s / 8 * ( 8 - 8 ) * -1 );
 }
 
-@keyframes scrollLeft{
 
-  to{
-    left: -18em;
-  }
-}
 
 
 
@@ -1370,7 +1964,7 @@ color:royalblue;
   bottom: 2%;
   left: 1%;
   width: 250px;
-  height: 92vh;
+  height: 82vh;
   padding: 10px 14px;
   background-color: white;
   border-radius: 20px;
@@ -1409,6 +2003,7 @@ color:royalblue;
 
 .dashboard-main-wrapper{
   margin-left:300px;
+  margin-top: 60px;
   /* display: flex;
   justify-content: space-evenly; */
   padding: 20px;
@@ -1522,13 +2117,13 @@ color:royalblue;
   border-radius: 25px;
   height: 88%;
   width: 75vw;
-  padding: 20px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
   margin-left: 300px;
-  margin-top: 25px;
+  margin-top: 85px;
 }
 
 .appTracker-timeline{
@@ -1653,7 +2248,6 @@ color:royalblue;
   flex-wrap: wrap;
   overflow: scroll;
   gap: 1rem;
-  justify-content: space-between;
   border-radius: 5px;
 }
 
@@ -1674,7 +2268,7 @@ color:royalblue;
 .discover-wrapper{
   background-color: white;
   border-radius: 25px;
-  height: 88%;
+  height: 78%;
   width: 75vw;
   padding: 20px;
   display: flex;
@@ -1683,7 +2277,7 @@ color:royalblue;
   align-items: flex-start;
 
   margin-left: 300px;
-  margin-top: 25px;
+  margin-top: 5.5rem;
 }
 
 .discover-header-search{
@@ -1693,8 +2287,15 @@ color:royalblue;
   gap: 1rem;
 }
 
-.discover-SavedGrantCards{
+.discover-searchbar-wrapper{
   height: 100%;
+  width: 100%;
+  position: relative;
+  top: -1.5rem;
+}
+
+.discover-SavedGrantCards{
+  height: 90%;
   width: 100%;
 }
 

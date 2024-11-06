@@ -9,9 +9,9 @@ import { Link } from 'react-router-dom';
 export default function Sidenav() {
     return (
         <nav className="side-navbar">
-            <header>
+            {/* <header>
                 <Link to="/" className="side-navbar-logo-wrapper"><img src={logo} /></Link>
-            </header>
+            </header> */}
 
             <ul>
                 <li><Link to="/dashboard"><DashboardIcon />Dashboard</Link></li>

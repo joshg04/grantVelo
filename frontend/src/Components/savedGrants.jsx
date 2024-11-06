@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
 const Grants = [
     {
@@ -34,17 +34,36 @@ const Grants = [
 ]
 
 export const SavedGrants = () => {
+
+    const [grants, setGrants] = useState([])
+
+    useEffect(() => {
+        const fetchData = async() => {
+          try{
+            const response = await axios.get('http://localhost:4000/')
+            const uniqueIndustries = [...new Set(response.data)];
+            setGrants(uniqueIndustries)
+          }
+          catch(error){
+            console.error('Error getting data:', error)
+          }
+        }
+    
+        fetchData()
+    
+      }, []);
+
     return(
         <div className="yourGrants-wrapper">
             <h1>Saved Grants</h1>
-            {Grants.map((grant) => {
-                return(
-                    <div key={grant.id} className="yourGrants-item">
-                        <li className="yourGrants-item-name">{grant.name}</li>
-                        <li className="yourGrants-item-date">{grant.duedate}</li>
+            {grants.map((grant, index) => (
+          
+                    <div key={index} className="yourGrants-item">
+                        <li className="yourGrants-item-name">{grant.title}</li>
+                        <li className="yourGrants-item-date">{grant.closingDate}</li>
                     </div>
-                )
-            })
+                
+            ))
 
             }
         </div>

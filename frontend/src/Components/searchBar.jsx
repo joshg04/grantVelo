@@ -3,85 +3,114 @@ import SearchIcon from '@mui/icons-material/Search';
 import SelectLocation from "./select_location";
 import SelectAmount from "./select_amount";
 import SelectIndustry from "./select_Industry";
+import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+import Box from "@mui/material/Box";
+import Autocomplete from '@mui/material/Autocomplete';
+import axios from 'axios';
 
-export const Searchbar = ({ setResults }) => {
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-    const [users, setUsers] = useState([]);
-    const [open, setOpen] = useState(false);
-    const [searchTerm, setSearchTerm] = useState('');
-    const searchBarRef = useRef();
+export const Searchbar = ({ setSearch }) => {
+
+    const [grants, setGrants] = useState([])
+    const [searchValue, setSearchValue] = useState('')
+    const [selectedIndustry, setSelectedIndustry] = useState('')
+
 
     useEffect(() => {
-        const fetchPost = async () => {
-            const response = await fetch('https://jsonplaceholder.typicode.com/users');
-            const user = await response.json();
-            setUsers(user);
+        const fetchData = async() => {
+          try{
+            const response = await axios.get('http://localhost:4000/')
+            const uniqueIndustries = [...new Set(response.data)];
+            setGrants(uniqueIndustries)
+          }
+          catch(error){
+            console.error('Error getting data:', error)
+          }
         }
+    
+        fetchData()
+    
+      }, []);
 
-        fetchPost();
-    }, [])
+      
 
-    const toggleDropdown = () => {
-        
-            setOpen(true);
-        
-    }
+    const [age, setAge] = React.useState('');
 
-    const handleItemClick = (item) => {
-        setSearchTerm(item);
-        setOpen(false);
-    }
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
-                setOpen(false); // Close the dropdown if clicked outside
-            }
-        };
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);  // Send search value to parent
+    setSearchValue(event.target.value);
+  };
 
-        // Add the event listener when the dropdown is open
-        // if (open) {
-        //     document.addEventListener("click", handleClickOutside);
-        // } else {
-        //     document.removeEventListener("click", handleClickOutside);
-        // }
+  const handleIndustrySelect = (industry) => {
+    setSearchValue(industry); // Update search bar with selected industry
+    setSearch(industry);      // Send selected industry to parent for filtering
+};
 
-        document.addEventListener("mousedown", handleClickOutside);  // Listen for clicks outside
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);  // Cleanup the listener
-        };
 
-       
-    }, []);
-
- 
 
     return (
-        <div className="searchbar-wrapper" ref={searchBarRef}>
-            <div className="searchbar-inside">
-                <div className="search-border">
-                    <SearchIcon />
-                </div>
-                <input 
-                    placeholder="Search for a category" 
-                    type="search" 
-                    value={searchTerm} 
-                    onChange={(e) => setSearchTerm(e.target.value)} 
-                    onClick={toggleDropdown}>
-                </input>
-                <SelectLocation />
-                <SelectIndustry />
-                <SelectAmount />
-            </div>
-            <div className={`results-list ${open ? "results-list-open" : null}`}>
 
-                {users
-                    .filter(user => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
-                    .map((user, id) => {
-                    return <div className="list-item" onClick={() => {handleItemClick(user.name); {toggleDropdown}}} key={id}>{user.name}</div>;
-                })}
-            </div>
-            
-        </div>
+    <Stack sx={{width: '100%', padding: 2}}>
+        <Box display='flex' gap={1} alignItems='center'>
+        <Box sx={{flex: 2}}>
+        <Autocomplete
+            freeSolo
+            id="free-solo-2-demo"
+            disableClearable
+            options={grants.map((grant) => grant.title)}
+            inputValue={searchValue} // Controlled input value
+            onInputChange={(e, newInputValue) => setSearchValue(newInputValue)}
+            renderInput={(params) => (
+                <TextField onChange={handleSearchChange}
+
+                    {...params}
+                    label="Search For Grants"
+                    slotProps={{
+                        input: {
+                            ...params.InputProps,
+                            type: 'search',
+                        },
+                    }}
+                />
+                
+            )}
+        />
+        </Box>
+        
+        <Box display='flex' sx={{flex: 1, height: '100%'}}>
+        <SelectLocation />
+        <SelectIndustry 
+        onSelectIndustry={handleIndustrySelect}
+        />
+        <FormControl sx={{m: 1, minWidth: 100}} size="small">
+      <InputLabel id="demo-select-small-label">Amount</InputLabel>
+      <Select
+        labelId="demo-select-small-label"
+        id="demo-select-small"
+        value={age}
+        label="Age"
+        onChange={handleChange}
+      >
+        <MenuItem value={10}>$0 - $4,999</MenuItem>
+        <MenuItem value={20}>$5,000 - $19,999</MenuItem>
+        <MenuItem value={30}>$20,000 - $49,999</MenuItem>
+        <MenuItem value={40}>$50,000 - $99,999</MenuItem>
+        <MenuItem value={50}>$100,000+</MenuItem>
+      </Select>
+    </FormControl>
+        </Box>
+        </Box>
+    </Stack>
+
+
     )
 }

@@ -28,6 +28,7 @@ function Navbar() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -123,7 +124,7 @@ function Navbar() {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: 'royalblue', display: 'block' }}
             >
-              My Grants
+              <Link to='/dashboard'>My Grants</Link>
             </Button>
 
             <Button
@@ -134,7 +135,7 @@ function Navbar() {
             </Button>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            {/* <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
@@ -160,7 +161,9 @@ function Navbar() {
                   <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
+            <Link to='login'><Button>Log In</Button></Link>
+            <Link to='signup'><Button>Sign Up</Button></Link>
           </Box>
         </Toolbar>
       </Container>

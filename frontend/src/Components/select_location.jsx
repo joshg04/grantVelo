@@ -4,11 +4,16 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+
+const states = [
+  'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming',
+]
+
 export default function SelectLocation() {
-  const [age, setAge] = React.useState('');
+  const [state, setState] = React.useState('');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setState(event.target.value);
   };
 
   return (
@@ -17,13 +22,16 @@ export default function SelectLocation() {
       <Select
         labelId="demo-select-small-label"
         id="demo-select-small"
-        value={age}
+        value={state}
         label="Location"
         onChange={handleChange}
       >
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
+        {states.map((state, index) => (
+            <MenuItem key={index} value={state}>
+              {state}
+            </MenuItem>
+          ))}
+        
       </Select>
     </FormControl>
   );

@@ -26,7 +26,9 @@ export default function Home() {
                         Discover a comprehensive platform that simplifies your search for grants and funding opportunities.
                         With everything in one place, you can easily find and organize the resources you need to succeed.
                     </p>
+                    <div className="home-searchbar-wrapper">
                     <Searchbar setResults={setResults} />
+                    </div>
                 </div>
                 
             </div>

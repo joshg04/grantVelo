@@ -37,9 +37,8 @@ export default function Discover() {
                         </div>
                     </div> */}
                 </div>
-                <div className="discover-tempimg">
                 </div>
             </div>
-        </div>
+        
     )
 }
